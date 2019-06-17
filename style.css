@@ -1,0 +1,15 @@
+.login{
+  display: grid;
+
+}
+
+.logo {
+ 
+}
+
+.buttons {
+  text-align: center;
+  display: grid;
+  grid-gap: 10px 0px;
+  flex-direction: column;
+}
