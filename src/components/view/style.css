@@ -1,0 +1,53 @@
+@import 
+url(https://fonts.googleapis.com/css?family=Montserrat);
+
+body {
+  font-family: montserrat, arial, verdana;
+}
+.login {
+  display: grid;
+  grid-row-gap: 1em;
+  margin: 40px 400px;
+  justify-items: center;
+}
+.logo1 {
+  height: 150px;
+  width: 250px;
+  margin: 10px 0px;
+}
+#msform fieldset {
+	background: white;
+	border: 0 none;
+	border-radius: 3px;
+	box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
+	padding: 20px 30px;
+	box-sizing: border-box;
+	width: 80%;
+	margin: 0 10%;
+	position: relative;
+}
+#msform input, #msform textarea {
+	padding: 15px;
+	border: 1px solid #ccc;
+	border-radius: 3px;
+	margin-bottom: 10px;
+	width: 100%;
+	box-sizing: border-box;
+	font-family: montserrat;
+	color: #2C3E50;
+	font-size: 13px;
+}
+#msform .action-button {
+	width: 100px;
+	background: rgb(9, 108, 173);
+	font-weight: bold;
+	color: white;
+	border: 0 none;
+	border-radius: 1px;
+	cursor: pointer;
+	padding: 10px 5px;
+  margin: 10px 5px;
+}
+#msform .action-button:hover, #msform .action-button:focus {
+	box-shadow: 0 0 0 2px white, 0 0 0 3px rgb(9, 108, 173);
+}
