@@ -10,17 +10,17 @@
 
 <body>
 	<form id="msform">
-		<div class="login">
+		<div class="signup">
 			<div>
-				<img src="../../assets/logo2.jpg" class="logo1" />
+				<img src="../../assets/logo2.jpg" class="logo2" />
 			</div>
 			<fieldset>
 				<h2>Cadastre-se</h2>
-				<input type="text" name="fname" placeholder="Nome" />
-				<input type="text" name="lname" placeholder="Sobrenome" />
-				<input type="text" name="email" placeholder="Email" />
-				<input type="password" name="pass" placeholder="Senha" />
-				<input type="password" name="cpass" placeholder="Confirme sua senha" />
+				<input type="text" name="fname" placeholder="Nome" required/>
+				<input type="text" name="lname" placeholder="Sobrenome" required/>
+				<input type="email" name="email" placeholder="Email" required/>
+				<input type="password" name="pass" placeholder="Senha" required/>
+				<input type="password" name="cpass" placeholder="Confirme sua senha" required/>
 
 				<input type="submit" name="submit" class="submit action-button" value="Criar conta" />
 			</fieldset>
