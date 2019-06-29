@@ -2,7 +2,8 @@
 
     const routes = {
         '/': './components/view/home.html',
-        '/sapato': 'SAPATO',
+        '/about' : './components/view/about.html',
+        '/signup': './components/view/signup.html',
     }
 
     const router = () => {
@@ -10,10 +11,19 @@
         const path = window.location.hash.slice(1);
         const currentPage = routes[path];
 
-        content.innerHTML = `<object style="width: 100vw; height: 100vh" type="text/html" data="${currentPage}" ></object>`;
+        fetch(currentPage).then(res => {
+            res.text().then(inner => {
+                content.innerHTML = inner;
+            });
+        });
     }
     
     window.addEventListener('load', router);
     window.addEventListener('hashchange', router);
     
 })(window, document, undefined);
+
+function navigate(nextScreen) {
+    nextScreen = nextScreen ? nextScreen : '';
+    window.location.hash = `/${nextScreen}`;
+}
