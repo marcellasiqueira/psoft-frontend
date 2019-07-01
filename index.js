@@ -6,10 +6,21 @@
         '/signup': './components/view/signup.html',
     }
 
+    const routes_token = {
+        '/disciplinas': './components/view/disciplinas.html'
+    }
+
     const router = () => {
         const content = document.getElementById("eita");
         const path = window.location.hash.slice(1);
-        const currentPage = routes[path];
+        let currentPage = routes[path];
+
+        if (currentPage === undefined && localStorage.getItem("token") != undefined) {
+            currentPage = routes_token[path];
+        } else if (currentPage === undefined) {
+            window.location.hash = "/";
+            currentPage = routes["/"];
+        }
 
         fetch(currentPage).then(res => {
             res.text().then(inner => {
