@@ -11,3 +11,10 @@ const disciplinasmock = [{
         calendar: new Date()
     }]
 }]
+localStorage.setItem("token")
+const tabela = document.getElementById("tabela-disciplinas");
+
+disciplinasmock.forEach(disciplina => {
+    tabela.innerHTML = tabela.innerHTML + 
+            `<tr><td>${disciplina.name}</td> <td>${disciplina.likes.length}</td> <td>${disciplina.comments.length}</td></tr>`
+})
