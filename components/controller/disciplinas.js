@@ -1,3 +1,6 @@
+function initDisciplinas() {
+    
+}
 const disciplinasmock = [{
     name: "Projeto de Software",
     likes: ["júlio", "iann", "douglas"],
