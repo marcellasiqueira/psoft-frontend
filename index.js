@@ -1,30 +1,53 @@
 (function(window, document, undefined) {
 
     const routes = {
-        '/': './components/view/home.html',
-        '/about' : './components/view/about.html',
-        '/signup': './components/view/signup.html',
-    }
+        '/': {
+            templateUrl: './components/view/home.html',
+            initFunction: initHome,
+        },
+        '/about' : {
+            templateUrl: './components/view/about.html',
+            initFunction: function() { },
+        },
+        '/signup': {
+            templateUrl: './components/view/signup.html',
+            initFunction: initSignUp,
+        },
+    };
 
     const routes_token = {
-        '/disciplinas': './components/view/disciplinas.html'
-    }
+        '/disciplinas': {
+            templateUrl: './components/view/disciplinas.html',
+            initFunction: initDisciplinas,
+        },
+        '/disciplina': {
+            templateUrl: './components/view/disciplina.html',
+            initFunction: initDisciplina,
+        },
+    };
 
     const router = () => {
         const content = document.getElementById("eita");
         const path = window.location.hash.slice(1);
-        let currentPage = routes[path];
+        
+        const routePath = "/" + path.split("/")[1];
+        const params = path.split("/")[2];
 
-        if (currentPage === undefined && localStorage.getItem("token") != undefined) {
-            currentPage = routes_token[path];
-        } else if (currentPage === undefined) {
+        let currentRoute = routes[routePath];
+
+        if (currentRoute === undefined && localStorage.getItem("token") != undefined) {
+            currentRoute = routes_token[routePath];
+        } else if (currentRoute === undefined) {
             window.location.hash = "/";
-            currentPage = routes["/"];
+            currentRoute = routes["/"];
         }
+
+        const currentPage = currentRoute.templateUrl;
 
         fetch(currentPage).then(res => {
             res.text().then(inner => {
                 content.innerHTML = inner;
+                currentRoute.initFunction(params);
             });
         });
     }
