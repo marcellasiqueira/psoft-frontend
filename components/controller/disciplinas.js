@@ -28,8 +28,16 @@ function initDisciplinas() {
     atualizaTabela();
 
     function atualizouTexto(text) {
-        const input = document.getElementById("campo-disciplinas").value;
-        const resultado = disciplinasmock.filter(disciplina => disciplina.name.toLowerCase().includes(input));
+        let inputValue = document.getElementById("campo-disciplinas").value;
+        console.log(isNaN(inputValue));
+        let resultado = {};
+        if (isNaN(inputValue)) {
+            resultado = disciplinasmock.filter(disciplina => disciplina.name.toLowerCase().includes(inputValue));
+        } else {
+            inputValue = parseInt(inputValue);
+            resultado = disciplinasmock.filter(disciplina => disciplina.id.match(inputValue));
+        }
+        console.log(typeof resultado);
         console.log("atualizou", resultado);
         atualizaTabela(resultado);
     }
