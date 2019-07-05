@@ -1,9 +1,8 @@
-function initSignUp() {
-    
-    console.log("iniciou sign up");
-    
+function initSignup() {
+    console.log("iniciou signup");
+
     function signup() {
-    
+
         console.log("cadastro");
     
         // pega o valor de cada elemento passado
@@ -32,7 +31,8 @@ function initSignUp() {
                 }
             });
         }
-        
-        
     }
+
+    const botao = document.getElementById("signup");
+    botao.addEventListener('click', signup);
 }

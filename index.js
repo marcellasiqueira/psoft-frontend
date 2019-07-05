@@ -11,7 +11,7 @@
         },
         '/signup': {
             templateUrl: './components/view/signup.html',
-            initFunction: initSignUp,
+            initFunction: initSignup,
         },
     };
 

@@ -1,9 +1,8 @@
 function initHome() {
-    
     console.log("iniciou home");
-    
+
     function login() {
-    
+
         console.log("faz login");
     
         // pega o valor de cada elemento passado
@@ -30,8 +29,9 @@ function initHome() {
                 }
             });
         }
-        
-        
     }
+
+    const botao = document.getElementById("login");
+    botao.addEventListener('click', login);
 }
 

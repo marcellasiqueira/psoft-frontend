@@ -4,7 +4,6 @@ const default_header = {
     Authorization: localStorage.getItem('token'),
     "Content-Type": "application/json",
     'Access-Control-Allow-Origin':'*'
-
 }
 
 function requisicaoGET(endpoint) {
