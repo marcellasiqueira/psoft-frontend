@@ -22,11 +22,11 @@ body {
   font-size: 20px;
 }
 a, a:link {
-  color: white;
+  color: rgb(0, 66, 110);
   text-decoration: none;
 }
 a:hover {
-  color: rgb(4, 101, 165);
+  color: rgb(5, 102, 167);
   text-decoration: underline;
 }
 .logo {
@@ -90,4 +90,15 @@ a:hover {
 }
 #msform .action-button:hover, #msform .action-button:focus {
 	box-shadow: 0 0 0 2px white, 0 0 0 3px rgb(9, 108, 173);
+}
+.pesquisa {
+  margin: 100px 150px;
+}
+th, td {
+  border-bottom: 1px solid #ddd;
+}
+table.a {
+  table-layout: fixed;
+  width: 100%;
+  text-align: center;
 }

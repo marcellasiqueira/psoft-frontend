@@ -1,9 +1,10 @@
-const BASE_URL = 'http://localhost:8080/api/v1';
+const BASE_URL = 'https://classifica-cc.herokuapp.com/api/v1';
 
 const default_header = { 
     Authorization: localStorage.getItem('token'),
     "Content-Type": "application/json",
     'Access-Control-Allow-Origin':'*'
+
 }
 
 function requisicaoGET(endpoint) {

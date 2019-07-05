@@ -1,8 +1,7 @@
-function initDisciplina(idDisciplina) {
-    
-    console.log("iniciou disciplina", idDisciplina);
+function initDisciplina(idDaDisciplina) {
+    console.log("iniciou disciplina", idDaDisciplina);
 
-    const disciplinamock = {
+    const mockDisciplina = {
         id: 1,
         name: "Projeto de Software",
         likes: ["júlio", "iann", "douglas"],
@@ -20,7 +19,5 @@ function initDisciplina(idDisciplina) {
     console.log(mockDisciplina);
 
     const header = document.getElementById('nome-disciplina');
-    header.innerHTML = disciplinamock.name;
-
-
+    header.innerHTML = mockDisciplina.name;
 }
