@@ -1,23 +1,32 @@
 function initDisciplina(idDaDisciplina) {
     console.log("iniciou disciplina", idDaDisciplina);
 
-    const mockDisciplina = {
-        id: 1,
-        name: "Projeto de Software",
-        likes: ["júlio", "iann", "douglas"],
-        comments: [{
-            text: "sistema mal feito",
-            userEmail: "julinho123@gmail.com",
-            calendar: new Date()
-        }, {
-            text: "fiz o projeto sozinho",
-            userEmail: "inhamimimi@gmail.com",
-            calendar: new Date()
-        }]
-    };
+    let disciplina = {};
+    const disciplinaGET = requisicaoGET(`/subjects/${idDaDisciplina}`).then(data => {
+       console.log('data', data);
+        
+       disciplina = { ...data, ...disciplina };
+       console.log('disciplina', disciplina);
+    });
 
-    console.log(mockDisciplina);
+    const comentariosGET = requisicaoGET(`/comments/subject/${idDaDisciplina}`).then(data => {
+        disciplina.comments = data;
+    });
 
-    const header = document.getElementById('nome-disciplina');
-    header.innerHTML = mockDisciplina.name;
+    Promise.all([disciplinaGET, comentariosGET]).then(() => {
+        const header = document.getElementById('nome-disciplina');
+        header.innerHTML = disciplina.name;
+
+        // const likes = document.getElementById('likes');
+        // likes.innerHTML = disciplina.likes;
+
+        // const comments = document.getElementById('comentarios');
+        // let tbBody = "";
+        // disciplinas.forEach(disciplina => {
+        //     tbBody += `<td>${comments.}</td> <td>${disciplina.comments.length}</td></tr>`
+        // });
+        // comments.innerHTML = tbBody;
+    })
+
+
 }
