@@ -1,9 +1,6 @@
 function initHome() {
-    console.log("iniciou home");
 
     function login() {
-
-        console.log("faz login");
     
         // pega o valor de cada elemento passado
         const fname = document.getElementById("fname").value;
@@ -21,7 +18,6 @@ function initHome() {
             };
     
             // requisição 
-            console.log(loginObj);
             requisicaoPOST('/auth/login', loginObj).then(data => {
                 if (data !== undefined) {
                     localStorage.setItem('token', "Bearer " + data.token);

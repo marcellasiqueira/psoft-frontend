@@ -1,9 +1,6 @@
 function initSignup() {
-    console.log("iniciou signup");
 
     function signup() {
-
-        console.log("cadastro");
     
         // pega o valor de cada elemento passado
         const fname = document.getElementById("fname").value;
@@ -22,12 +19,10 @@ function initSignup() {
             };
     
             // requisição 
-            console.log(loginObj);
             requisicaoPOST('/students/signup', loginObj).then(data => {
                 if (data !== undefined) {
                     localStorage.setItem('token', "Bearer " + data.token);
                     localStorage.setItem('email', email);
-                    console.log(data);
                     navigate('disciplinas');
                 }
             });

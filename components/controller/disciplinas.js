@@ -1,5 +1,4 @@
 function initDisciplinas() {
-    console.log("iniciou disciplinas");
 
     let disciplinasmock = [];
     requisicaoGET('/subjects/').then(data => {
@@ -18,7 +17,6 @@ function initDisciplinas() {
 
     function atualizouTexto(text) {
         let inputValue = document.getElementById("campoDisciplinas").value;
-        console.log(isNaN(inputValue));
         let resultado = {};
         if (isNaN(inputValue) || inputValue === "") {
             resultado = disciplinasmock.filter(disciplina => disciplina.name.toLowerCase().includes(inputValue));
@@ -26,8 +24,7 @@ function initDisciplinas() {
             inputValue = parseInt(inputValue);
             resultado = disciplinasmock.filter(disciplina => disciplina.id === inputValue);
         }
-        console.log(typeof resultado);
-        console.log("atualizou", resultado);
+
         atualizaTabela(resultado);
     }
 

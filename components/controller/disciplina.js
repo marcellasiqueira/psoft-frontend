@@ -1,13 +1,9 @@
 function initDisciplina(idDaDisciplina) {
-    console.log("iniciou disciplina", idDaDisciplina);
 
     let disciplina = {};
     let funcaoBotao = "";
-    const disciplinaGET = requisicaoGET(`/subjects/${idDaDisciplina}`).then(data => {
-       console.log('data', data);
-        
+    const disciplinaGET = requisicaoGET(`/subjects/${idDaDisciplina}`).then(data => {        
        disciplina = { ...data, ...disciplina };
-       console.log('disciplina', disciplina);
     });
 
     const comentariosGET = requisicaoGET(`/comments/subject/${idDaDisciplina}`).then(data => {
@@ -95,9 +91,7 @@ function initDisciplina(idDaDisciplina) {
         }
 
         requisicaoPOST('/comments/create/', objetoComentario).then(data => {
-            console.log(data);
             disciplina.comments.push(data);
-            console.log(disciplina);
             atualizaListaComentarios();
         });
     }
