@@ -17,7 +17,7 @@ function initDisciplinas() {
     });
 
     function atualizouTexto(text) {
-        let inputValue = document.getElementById("campo-disciplinas").value;
+        let inputValue = document.getElementById("campoDisciplinas").value;
         console.log(isNaN(inputValue));
         let resultado = {};
         if (isNaN(inputValue) || inputValue === "") {
@@ -46,6 +46,5 @@ function initDisciplinas() {
         tabela.innerHTML = tbBody;
     }
 
-    document.getElementById("campo-disciplinas").addEventListener("keyup", atualizouTexto);
+    document.getElementById("campoDisciplinas").addEventListener("keyup", atualizouTexto);
 }
-

@@ -17,9 +17,6 @@ function initDisciplina(idDaDisciplina) {
         const header = document.getElementById('nome-disciplina');
         header.innerHTML = disciplina.name;
 
-        // const likes = document.getElementById('likes');
-        // likes.innerHTML = disciplina.likes;
-
         // const comments = document.getElementById('comentarios');
         // let tbBody = "";
         // disciplinas.forEach(disciplina => {
@@ -27,6 +24,21 @@ function initDisciplina(idDaDisciplina) {
         // });
         // comments.innerHTML = tbBody;
     })
-
+    
+    function like() {
+        const emailUser = localStorage.getItem("email");
+        
+        const likeObj = {
+            id: idDaDisciplina,
+            email: emailUser      
+        }
+        
+        requisicaoPUT('/subjects/like', likeObj).then(data => {
+            disciplina = { ...data, ...disciplina };
+        });
+    }
+    
+        const botao = document.getElementById("like");
+        botao.addEventListener('click', like);
 
 }

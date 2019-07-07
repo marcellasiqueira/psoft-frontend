@@ -26,6 +26,7 @@ function initSignup() {
             requisicaoPOST('/students/signup', loginObj).then(data => {
                 if (data !== undefined) {
                     localStorage.setItem('token', "Bearer " + data.token);
+                    localStorage.setItem('email', email);
                     console.log(data);
                     navigate('disciplinas');
                 }

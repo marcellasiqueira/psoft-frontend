@@ -25,6 +25,7 @@ function initHome() {
             requisicaoPOST('/auth/login', loginObj).then(data => {
                 if (data !== undefined) {
                     localStorage.setItem('token', "Bearer " + data.token);
+                    localStorage.setItem('email', email);
                     navigate('disciplinas');
                 }
             });
@@ -33,5 +34,6 @@ function initHome() {
 
     const botao = document.getElementById("login");
     botao.addEventListener('click', login);
-}
 
+
+}
