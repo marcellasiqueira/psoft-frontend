@@ -34,7 +34,7 @@ function requisicaoPUT(endpoint, object) {
     return fetch(BASE_URL + endpoint, {
         headers: default_header,
         method: "PUT",
-        body: object,
+        body: JSON.stringify(object),
     }).then(res => {
         return res.json().then(data => {
             return data;
@@ -46,6 +46,18 @@ function requisicaoDELETE(endpoint) {
     return fetch(BASE_URL + endpoint, {
         headers: default_header,
         method: "DELETE",
+    }).then(res => {
+        return res.json().then(data => {
+            return data;
+        })
+    });
+}
+
+function requisicaoDELETEBody(endpoint, object) {
+    return fetch(BASE_URL + endpoint, {
+        headers: default_header,
+        method: "DELETE",
+        body: JSON.stringify(object),
     }).then(res => {
         return res.json().then(data => {
             return data;

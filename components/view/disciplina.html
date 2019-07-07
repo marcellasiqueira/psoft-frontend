@@ -2,15 +2,17 @@
     <form id="msform">
         <fieldset>
             <h1 id="nome-disciplina"></h1>
-            <button type="button" name="submit" id="like" class="action-button">Eu curto essa disciplina!</button>
+            <button type="button" name="submit" id="like-dislike" class="action-button">Eu curto essa
+                disciplina!</button>
 
-            <form action="/html/tags/html_form_tag_action.cfm" method="post">
+            <form>
                 <div>
                     <textarea name="comments" id="comments"
                         placeholder="Minha opinião sobre essa disciplina é..."></textarea>
                 </div>
-                <input type="submit" value="Submit">
+                <button type="button" id="adicionar-comentario" class="action-button">Submit</button>
             </form>
+            <div id="comentarios"></div>
         </fieldset>
     </form>
 </div>
