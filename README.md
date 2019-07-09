@@ -12,3 +12,6 @@ Não foi feito uso de nenhum framework ou alguma biblioteca, apenas Vanilla Java
 Para rodar o projeto: 
 
 ```python3 -m http.server 8081```
+
+O projeto:
+https://marcellasiqueira.github.io/psoft-frontend/#/
